@@ -59,6 +59,7 @@ export function Navbar() {
           >
             MR
           </motion.div>
+          
 
           {/* Desktop Navigation */}
           <motion.div
@@ -73,6 +74,7 @@ export function Navbar() {
             }}
             className="hidden md:flex gap-8"
           >
+            
             {navItems.map((item) => (
               <motion.button
                 key={item}

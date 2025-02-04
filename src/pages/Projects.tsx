@@ -38,7 +38,7 @@ export function Projects() {
             variants={fadeIn}
             className="text-xl text-gray-600 dark:text-gray-300"
           >
-            Here are some of the projects I've worked on. Each project represents a unique challenge and solution in mobile and web development.
+            Here are some of the projects I've worked on. Each project represents a unique challenge and solution in mobile application developmemnt and UI/UX.
           </motion.p>
         </motion.div>
 

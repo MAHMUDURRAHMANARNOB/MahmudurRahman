@@ -52,7 +52,20 @@ function Section({ children, className = '', id }: { children: React.ReactNode, 
 }
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'light' || (!savedTheme && window.matchMedia('(prefers-color-scheme: light)').matches);
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [darkMode]);
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
@@ -95,6 +108,7 @@ export default function Home() {
               Contact Me
             </motion.button>
           </div>
+          
           <div className="flex gap-6 justify-center">
             <motion.a
               href="https://github.com/MAHMUDURRAHMANARNOB"
@@ -185,7 +199,7 @@ export default function Home() {
               className="border-l-4 border-primary pl-6"
             >
               <h3 className="text-2xl font-bold mb-2">Software Engineer (Mobile Application)</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">Shonod • May 01, 2022 - Present</p>
+              <p className="text-gray-600 dark:text-cyan-800 mb-4">Shonod • May 01, 2022 - Present</p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                 <li>Led the development of "Digital Study Room" an AI-based mobile application for Bangla medium students.</li>
                 <li>Spearheaded the development of Risho-Speech and Risho-Guru, achieving a 30% increase in student engagement based on
@@ -201,7 +215,7 @@ export default function Home() {
               className="border-l-4 border-primary pl-6"
             >
               <h3 className="text-2xl font-bold mb-2">Software Developer Intern</h3>
-              <p className="text-gray-800 dark:text-gray-300 mb-4">Shonod • October 01, 2021 - April 30, 2022</p>
+              <p className="text-gray-800 dark:text-cyan-800 mb-4">Shonod • October 01, 2021 - April 30, 2022</p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
                 <li>Adapted and refined the user interface based on client specifications, utilizing raw CSS and JavaScript to meet and
                 exceed client expectations.</li>
@@ -232,7 +246,7 @@ export default function Home() {
               variants={fadeIn}
               className="text-xl text-gray-600 dark:text-gray-300 mb-8"
             >
-              Here are some of the projects I've worked on. Each project represents a unique challenge and solution in mobile and web development.
+              Here are some of the projects I've worked on. Each project represents a unique challenge and solution in mobile application developmemnt and UI/UX.
             </motion.p>
           </motion.div>
 
@@ -269,12 +283,14 @@ export default function Home() {
           </motion.h2>
           <motion.div 
             variants={staggerContainer}
-            className="grid grid-cols-2 md:grid-cols-3 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
             {[
-              'Flutter', 'Android', 'Firebase',
-              'REST APIs', 'Git', 'CI/CD',
-              'TensorFlow', 'Node.js', 'MongoDB'
+              'Flutter', 'Provider', 'Riverpod', 'BLoC','REST APIs', "Clean Architecture",
+              'Git', 'CI/CD', "Java", "Kotlin", "Google Maps API",
+              'MongoDB',"SQLite", "Room Library", 'Firebase', 'Supabase',
+              'React.js', "Node.js", 
+              "Figma",
             ].map((skill) => (
               <motion.div
                 key={skill}
@@ -307,17 +323,17 @@ export default function Home() {
               <div className="space-y-4">
                 <a
                   href="mailto:mahmudur.rahman2023@gmail.com"
-                  className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-gray-700 dark:text-cyan-800 hover:text-primary transition-colors"
                 >
                   <Mail size={20} />
                   <span>mahmudur.rahman2023@gmail.com</span>
                 </a>
                 <a
                   href="tel:+1234567890"
-                  className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                  className="flex items-center gap-2 text-gray-700 dark:text-cyan-800 hover:text-primary transition-colors"
                 >
                   <Phone size={20} />
-                  <span>+1 (234) 567-890</span>
+                  <span>+8801758387250</span>
                 </a>
               </div>
             </motion.div>
