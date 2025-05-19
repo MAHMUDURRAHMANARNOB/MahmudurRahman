@@ -157,7 +157,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.img
               variants={fadeIn}
-              src="https://media.licdn.com/dms/image/v2/D5603AQH4Jfw5AKfkbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693374909597?e=1743638400&v=beta&t=rt0h9V4Qzy4f43lhYbZAMQTiuYc8emcUpXHJh2Suldo"
+              src="https://media.licdn.com/dms/image/v2/D5603AQH4Jfw5AKfkbg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693374909597?e=1753315200&v=beta&t=_-zsYqrgjwRssuvj_F_erlcO20kYKYKeDcW70NQMhCo"
               alt="Professional headshot"
               className="rounded-lg shadow-xl"
             />
@@ -228,7 +228,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <Section id="projects" className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <motion.div 
             variants={staggerContainer}
             className="mb-12"
