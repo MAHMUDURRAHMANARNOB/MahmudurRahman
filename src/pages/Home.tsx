@@ -9,11 +9,13 @@ import {
   Sun,
   Phone,
   Download,
-  ChevronDown
+  ChevronDown,
+  CheckCircle2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ProjectCard } from '../components/ProjectCard';
 import { projects } from '../data/projects';
+import { ABOUT_ME } from '../lib/constants';
 
 // Animation variants
 const fadeIn = {
@@ -74,18 +76,74 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Mahmudur Rahman
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4"
+          >
+            Hi, I'm <span className="text-primary">Mahmudur Rahman</span>
+          </motion.h1>
+
+          {/* <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
             Software Engineer | Mobile Application Developer
-          </p>
-          <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-12">
-            Creating intuitive digital experiences with Flutter & Android
-          </p>
+          </p> */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-4 inline-block"
+            >
+              <span className="text-sm md:text-base bg-primary/10 text-primary px-3 py-1 rounded-full">
+                Software Engineer
+              </span>
+            </motion.div>
+            <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4 inline-block"
+          >
+            <span className="text-sm md:text-base bg-primary/10 text-primary px-3 py-1 rounded-full">
+              Mobile Application
+            </span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4 inline-block"
+          >
+            <span className="text-sm md:text-base bg-primary/10 text-primary px-3 py-1 rounded-full">
+              Web Application
+            </span>
+          </motion.div>
+
+           <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4 inline-block"
+          >
+            <span className="text-sm md:text-base bg-primary/10 text-primary px-3 py-1 rounded-full">
+              AI/ML Enthusiast
+            </span>
+          </motion.div>
+         
+         <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
+          >
+            I create beautiful, functional, and user-friendly mobile applications along with websites.
+            Specializing in modern frontend frameworks and robust backend solutions
+            to build exceptional digital experiences.
+          </motion.p>
+
           <div className="flex gap-6 justify-center mb-12">
             <motion.a
-              href="/resume.pdf"
+              href="src\assets\images\documents\Resume Mahmudur Rahman.pdf"
               download
               className="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
               whileHover={{ scale: 1.05 }}
@@ -148,12 +206,19 @@ export default function Home() {
       {/* About Section */}
       <Section id="about" className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold mb-12 text-primary"
-            variants={fadeIn}
-          >
-            About Me
-          </motion.h2>
+          <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl font-bold mb-2">{ABOUT_ME.title}</h2>
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Get to know more about me, my background, and what drives me.
+          </p>
+        </motion.div>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.img
               variants={fadeIn}
@@ -161,7 +226,41 @@ export default function Home() {
               alt="Professional headshot"
               className="rounded-lg shadow-xl"
             />
-            <motion.div variants={staggerContainer}>
+             <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-6"
+          >
+            <h3 className="text-2xl font-semibold">Who I Am</h3>
+            
+            <div className="space-y-4 text-muted-foreground">
+              {ABOUT_ME.description.split('\n\n').map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+
+            <div className="mt-8">
+              <h4 className="text-lg font-medium mb-4">My Highlights</h4>
+              <ul className="space-y-2">
+                {ABOUT_ME.highlights.map((highlight, index) => (
+                  <motion.li 
+                    key={index}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.1 * (index + 1) }}
+                    className="flex items-center gap-2"
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span>{highlight}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+            {/* <motion.div variants={staggerContainer}>
               <motion.p variants={fadeIn} className="text-lg mb-6">
                 I'm a passionate Software Engineer with expertise in mobile application development.
                 My journey in tech has been driven by a desire to create impactful solutions
@@ -173,8 +272,51 @@ export default function Home() {
                 My work at Shonod has allowed me to contribute to innovative EdTech solutions
                 and improve user engagement across multiple platforms.
               </motion.p>
-            </motion.div>
+            </motion.div> */}
           </div>
+        </div>
+      </Section>
+
+      {/* Projects Section */}
+      <Section id="projects" className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <motion.div 
+            variants={staggerContainer}
+            className="mb-12"
+          >
+            <motion.h2 
+              variants={fadeIn}
+              className="text-3xl md:text-4xl font-bold mb-6 text-primary"
+            >
+              Projects
+            </motion.h2>
+            <motion.p
+              variants={fadeIn}
+              className="text-xl text-gray-600 dark:text-gray-300 mb-8"
+            >
+              Here are some of the projects I've worked on. Each project represents a unique challenge and solution in mobile application developmemnt and UI/UX.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 gap-8 mb-12"
+          >
+            {projects.map((project) => (
+              <motion.div key={project.id} variants={fadeIn}>
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div variants={fadeIn} className="text-center">
+            <Link 
+              to="/projects"
+              className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
+            >
+              View All Projects
+            </Link>
+          </motion.div>
         </div>
       </Section>
 
@@ -226,48 +368,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Projects Section */}
-      <Section id="projects" className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <motion.div 
-            variants={staggerContainer}
-            className="mb-12"
-          >
-            <motion.h2 
-              variants={fadeIn}
-              className="text-3xl md:text-4xl font-bold mb-6 text-primary"
-            >
-              Featured Projects
-            </motion.h2>
-            <motion.p
-              variants={fadeIn}
-              className="text-xl text-gray-600 dark:text-gray-300 mb-8"
-            >
-              Here are some of the projects I've worked on. Each project represents a unique challenge and solution in mobile application developmemnt and UI/UX.
-            </motion.p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            className="grid md:grid-cols-2 gap-8 mb-12"
-          >
-            {projects.map((project) => (
-              <motion.div key={project.id} variants={fadeIn}>
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div variants={fadeIn} className="text-center">
-            <Link 
-              to="/projects"
-              className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors"
-            >
-              View All Projects
-            </Link>
-          </motion.div>
-        </div>
-      </Section>
+      
 
       {/* Skills Section */}
       <Section id="skills" className={`py-20 px-4 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'}`}>

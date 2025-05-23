@@ -52,13 +52,14 @@ export function Navbar() {
     }`}>
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          <motion.div
+          <motion.a
+          href='/'
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             className="text-2xl font-bold text-primary"
           >
             MR
-          </motion.div>
+          </motion.a>
           
 
           {/* Desktop Navigation */}
