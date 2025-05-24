@@ -1,5 +1,7 @@
 import { Project } from '../types/project';
-import rishoGuruImg from '../assets/images/risho_guru/Risho Guru.png';
+import rishoGuruMainImg from '../assets/images/risho_guru/Risho Guru.png';
+import rishoSpeechMainImg from '../assets/images/risho_speech/Risho speech.png';
+import tlhMainImg from '../assets/images/tlh/TLH.png';
 
 
 export const projects: Project[] = [
@@ -14,7 +16,7 @@ export const projects: Project[] = [
     implementation: 'The application was built using Flutter for cross-platform compatibility. We utilized TensorFlow Lite for on-device speech processing and Firebase for cloud functions and user data management. The architecture follows clean code principles with a robust state management system.',
     tech: ['Flutter', 'TensorFlow', 'Firebase', 'Cloud Functions'],
     images: {
-      main: rishoGuruImg,
+      main: rishoGuruMainImg,
       gallery: [
         'https://images.unsplash.com/photo-1589652717521-10c0d092dea9?auto=format&fit=crop&q=80',
         'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80',
@@ -57,7 +59,7 @@ export const projects: Project[] = [
     implementation: 'The application was built using Flutter for cross-platform compatibility. We utilized TensorFlow Lite for on-device speech processing and Firebase for cloud functions and user data management. The architecture follows clean code principles with a robust state management system.',
     tech: ['Flutter', 'TensorFlow', 'Firebase', 'Cloud Functions'],
     images: {
-      main: '../src/assets/images/risho_speech/Risho speech.png',
+      main: rishoSpeechMainImg,
       gallery: [
         'https://images.unsplash.com/photo-1589652717521-10c0d092dea9?auto=format&fit=crop&q=80',
         'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80',
@@ -95,7 +97,7 @@ export const projects: Project[] = [
     implementation: 'The platform was built using a microservices architecture with Spring Boot backend and Android native frontend. We implemented real-time updates using WebSocket connections and ensure data security through multiple encryption layers.',
     tech: ['Android', 'REST APIs', 'PostgreSQL', 'Spring Boot'],
     images: {
-      main: '../src/assets/images/tlh/TLH.png',
+      main: tlhMainImg,
       gallery: [
         'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80',
         'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80',
