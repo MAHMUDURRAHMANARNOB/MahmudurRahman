@@ -1,4 +1,6 @@
 import { Project } from '../types/project';
+import rishoGuruImg from '../assets/images/risho_guru/Risho Guru.png';
+
 
 export const projects: Project[] = [
   {
@@ -12,7 +14,7 @@ export const projects: Project[] = [
     implementation: 'The application was built using Flutter for cross-platform compatibility. We utilized TensorFlow Lite for on-device speech processing and Firebase for cloud functions and user data management. The architecture follows clean code principles with a robust state management system.',
     tech: ['Flutter', 'TensorFlow', 'Firebase', 'Cloud Functions'],
     images: {
-      main: '../src/assets/images/risho_guru/Risho Guru.png',
+      main: rishoGuruImg,
       gallery: [
         'https://images.unsplash.com/photo-1589652717521-10c0d092dea9?auto=format&fit=crop&q=80',
         'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&q=80',
