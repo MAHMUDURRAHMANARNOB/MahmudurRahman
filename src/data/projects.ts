@@ -2,6 +2,7 @@ import { Project } from '../types/project';
 import rishoGuruMainImg from '../assets/images/risho_guru/Risho Guru.png';
 import rishoSpeechMainImg from '../assets/images/risho_speech/Risho speech.png';
 import tlhMainImg from '../assets/images/tlh/TLH.png';
+import tlhEmpMainImg from '../assets/images/tlh_emp/tlh_emp_main.png';
 
 
 export const projects: Project[] = [
@@ -98,6 +99,44 @@ export const projects: Project[] = [
     tech: ['Android', 'REST APIs', 'PostgreSQL', 'Spring Boot'],
     images: {
       main: tlhMainImg,
+      gallery: [
+        'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80',
+        'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80',
+        'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80'
+      ]
+    },
+    timeline: '2021 - 2022',
+    features: [
+      'Advanced candidate tracking',
+      'Automated assessment tools',
+      'Performance analytics',
+      'Interview scheduling',
+      'Document management'
+    ],
+    achievements: [
+      'Reduced hiring time by 40%',
+      'Improved candidate experience score by 60%',
+      'Successfully implemented in 50+ companies',
+      'Processed 10,000+ applications'
+    ],
+    links: {
+      github: 'https://github.com/MAHMUDURRAHMANARNOB/talentlenshub',
+      demo: 'https://www.talentlenshub.com/',
+      playStore: 'https://play.google.com/store/apps/details?id=com.shonod.talent_lens_hub'
+    }
+  },
+  {
+    id: '4',
+    slug: 'talentlenshub_emp',
+    title: 'TalentLensHub Employee',
+    description: 'A comprehensive HR management platform that streamlines talent acquisition and assessment processes. The platform provides powerful tools for recruitment, employee evaluation, and talent management.',
+    shortDescription: 'Comprehensive HR management platform for talent acquisition and assessment.',
+    challenge: 'The key challenge was creating a scalable system that could handle complex recruitment workflows while maintaining data security and providing a seamless user experience for both recruiters and candidates.',
+    solution: 'We developed a modular architecture that separates different recruitment stages into independent but interconnected modules. This approach allows for easy scaling and maintenance while ensuring data consistency.',
+    implementation: 'The platform was built using a microservices architecture with Spring Boot backend and Android native frontend. We implemented real-time updates using WebSocket connections and ensure data security through multiple encryption layers.',
+    tech: ['Android', 'REST APIs', 'PostgreSQL', 'Spring Boot'],
+    images: {
+      main: tlhEmpMainImg,
       gallery: [
         'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80',
         'https://images.unsplash.com/photo-1542744094-24638eff58bb?auto=format&fit=crop&q=80',
